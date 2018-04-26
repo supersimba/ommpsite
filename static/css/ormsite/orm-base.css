@@ -1,0 +1,47 @@
+body{
+	padding: 0;
+	margin: 0;
+	background: rgb(241,244,245);
+	font-family: Arial, "宋体";
+	font-size: 13px;
+}
+
+
+.navbar-default{
+	background: rgb(51,153,204);
+	color: white;
+	border: 0px;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+.navbar-default .navbar-brand{
+	color: white;
+	font-family: Microsoft YaHei;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+/**/
+/*.url-path{
+	background: white;
+	border-bottom: 1px solid rgb(217,217,217);
+}*/
+/*.content{
+	padding-left: 0px;
+	padding-right: 0px;
+}*/
+.breadcrumb{
+	background: white;
+	border: 1px solid rgb(217,217,217);
+}
+
+/*
+*/
+.tr-collape{
+	display: none;
+}
+.table-info{
+	background: white;
+	color: slategray;
+}

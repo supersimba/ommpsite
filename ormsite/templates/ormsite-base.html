@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery-json-3.2.1.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+{#		<script type="text/javascript" src="/static/js/table-info.js"></script>#}
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="/static/css/ormsite/orm-base.css" />
+
+        {% block loadcss %}
+        {% endblock %}
+
+        {% block loadjs %}
+        {% endblock %}
+
+	</head>
+
+	<body>
+		<!--页面头部-->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<a class="navbar-brand" href="/ormindex/">Oracle复制监控</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="{% url 'ormindex' %}">首页</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">同步列表<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="{% url 'orminfo' %}">dsg</a>
+								</li>
+								<li>
+									<a href="#">goldengate</a>
+								</li>
+								<li>
+									<a href="#">dataguard</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/admin/">同步管理</a>
+						</li>
+						<li>
+							<a href="#">操作日志</a>
+						</li>
+						<li>
+							<a href="#">监控服务</a>
+						</li>
+                        <li>
+							<a href="{% url 'ommpsiteindex' %}">运维平台选项</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">通知</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">欢迎登录,simba <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">账号管理</a>
+								</li>
+								<li>
+									<a href="{% url 'ormlogout' %}">注销</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--END页面头部-->
+
+		<div class="container-fluid content">
+			<div class="row">
+				<!--路径导航-->
+                {% block url-path %}
+                {% endblock %}
+
+{#				<div class="col-md-12 url-path">#}
+{#					<ol class="breadcrumb">#}
+{#						<li>#}
+{#							<a href="#">首页</a>#}
+{#						</li>#}
+{#					</ol>#}
+{#				</div>#}
+				<!--END路径导航-->
+
+				<!--主内容区域-->
+				<div class="col-md-12">
+                    {% block main-content %}
+                    {% endblock %}
+					<!---->
+					<!---->
+				</div>
+				<!--END主内容区域-->
+
+				<!--footer-->
+				<div class="col-md-12" style="text-align: center;color:white;background: rgb(51,153,204);height: 30px;line-height: 30px;border: 1px solid rgb(217,217,217);">
+					李丹.信息技术部&nbsp;github@github.com:supersimba/ormsite3.git
+				</div>
+				<!--ENDfooter-->
+			</div>
+		</div>
+    </body>
+</html>

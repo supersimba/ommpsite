@@ -1,0 +1,78 @@
+/*a:link {text-decoration:none;}		!* 未被访问的链接 *!*/
+/*a:visited {text-decoration:none;}	!* 已被访问的链接 *!*/
+/*a:hover {text-decoration:none;}	!* 鼠标指针移动到链接上 *!*/
+/*a:active {text-decoration:none;}	!* 正在被点击的链接 *!*/
+
+.display-log{
+    background: white;
+    border: 2px solid rgb(217,217,217);
+    height: 500px;width: 100%;font-size: 15px;
+    margin-top: 5px;margin-bottom: 5px;
+    padding: 25px 25px 25px 25px;
+    overflow-y: scroll;
+}
+
+.queueinfo{
+    font-size: 15px;font-weight: 600;background: white;border: 1px solid rgb(217,217,217);
+    margin-bottom: 5px;
+    padding:5px 5px 5px 5px;
+    color: rgb(51,153,204);
+}
+
+.ul-menu-wrapper{
+    position: relative;
+    display: inline-block;
+}
+
+.ul-menu-s{
+    list-style-type: none;margin:0px;
+	padding: 0px;
+	text-align: center;
+	position: absolute;
+	z-index: 6000;
+	width: 100%;
+    background: rgb(51,153,204);
+	display: none;
+}
+
+.ul-menu li{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#menu-wrapper-s:hover .ul-menu-s{
+    display: block;
+}
+
+
+.ul-menu-t{
+    list-style-type: none;margin:0px;
+	padding: 0px;
+	text-align: center;
+	position: absolute;
+	z-index: 6000;
+	width: 100%;
+    background: rgb(51,153,204);
+	display: none;
+}
+
+
+#menu-wrapper-t:hover .ul-menu-t{
+    display: block;
+}
+.ul-menu-s li>a:link,.ul-menu-s li>a:visited ,.ul-menu-s li>a:hover,.ul-menu-s li>a:active
+{text-decoration:none;background: rgb(51,153,204);color: white}
+
+
+.ul-menu-t li>a:link,
+.ul-menu-t li>a:visited ,
+.ul-menu-t li>a:hover,
+.ul-menu-t li>a:active {text-decoration:none;background: rgb(51,153,204);color: white}
+
+.ul-menu-t li,
+.ul-menu-s li
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+}

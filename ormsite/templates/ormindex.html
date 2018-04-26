@@ -1,0 +1,46 @@
+{% extends "ormsite-base.html" %}
+
+
+<!--页面头部-->
+<!--END页面头部-->
+
+<!--路径导航-->
+{% block url-path %}
+    <div class="col-md-12 url-path">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">首页</a>
+            </li>
+        </ol>
+    </div>
+{% endblock %}
+<!--END路径导航-->
+
+<!--主内容区域-->
+<!---->
+{% block main-content %}
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h5>我的DSG:{{ mydsgnum }}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                我的DATAGUARD：12
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                我的GOLDENGATE:12
+            </div>
+        </div>
+    </div>
+{% endblock %}
+<!---->
+
+<!--END主内容区域-->

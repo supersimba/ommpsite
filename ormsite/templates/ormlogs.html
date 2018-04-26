@@ -1,0 +1,106 @@
+{% extends "ormsite-base.html" %}
+
+{% block loadjs %}
+    <script type="text/javascript" src="/static/js/ormsite/ormlogs.js"></script>
+{% endblock %}
+
+{% block loadcss %}
+    <link rel="stylesheet" href="/static/css/buttons.css">
+    <link rel="stylesheet" href="/static/css/ormsite/ormlogs.css">
+{#    <a class="button button-uppercase button-primary">uppercase</a>#}
+{% endblock %}
+
+<!--页面头部-->
+<!--END页面头部-->
+
+<!--路径导航-->
+{% block url-path %}
+    <div class="col-md-12 url-path">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">首页</a>
+            </li>
+            <li>
+                <a href="{% url 'orminfo' %}">同步信息</a>
+            </li>
+            <li>
+                <a>日志-dsg</a>
+            </li>
+        </ol>
+    </div>
+{% endblock %}
+<!--END路径导航-->
+
+<!--主内容区域-->
+<!---->
+{% block main-content %}
+    {% if logtype == "0" %}
+    <div class="col-md-12">
+        <div class="queueinfo">
+{#            S端：&nbsp;{{ ip }}&nbsp;{{ path }}#}
+            Source&nbsp;&nbsp;<span id="span-ip">{{ ip }}</span>&nbsp;&nbsp<span id="span-path">{{ path }}</span>&nbsp;&nbsp;
+  <span id="span-sshuser" style="display:none;">{{ u }}</span><span id="span-sshpwd" style="display:none;">{{ p }}</span>
+        </div>
+        <div>
+            <a class="button button-primary button-small btn-check-pro" style="font-size: 9px;background: rgb(51,153,204);">进程检查</a>
+            <a class="button button-primary button-small btn-vag-log" style="font-size: 9px;background: rgb(51,153,204);">分析日志</a>
+            <a class="button button-primary button-small" id="btn-sender-log" style="font-size: 9px;background: rgb(51,153,204)">传送日志</a>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div  class="display-log"  id="div-display-log">
+
+        </div>
+    </div>
+    {% else %}
+        <div  class="queueinfo">
+            Target&nbsp;&nbsp;<span id="span-ip">{{ ip }}</span>&nbsp;&nbsp;<span id="span-path">{{ path }}</span><span id="span-sshuser" style="display:none;">{{ u }}</span><span id="span-sshpwd" style="display:none;">{{ p }}</span>
+        </div>
+    <div class="col-md-12">
+        <div>
+            <a class="button button-primary button-small btn-check-pro" style="font-size: 9px;background: rgb(51,153,204);">进程检查</a>
+            <a class="button button-primary button-small btn-vag-log" style="font-size: 9px;background: rgb(51,153,204);">接收进程</a>
+            <span class="ul-menu-wrapper" id="menu-wrapper-s">
+                <a class="button button-primary button-small" style="font-size: 9px;background: rgb(51,153,204);">
+                    全量日志
+                </a>
+                <ul class="ul-menu-s">
+                    <li><a href="#">s0</a></li>
+                    <li><a href="#">s1</a></li>
+                    <li><a href="#">s2</a></li>
+                    <li><a href="#">s3</a></li>
+                    <li><a href="#">s4</a></li>
+                    <li><a href="#">s5</a></li>
+                    <li><a href="#">s6</a></li>
+                    <li><a href="#">s7</a></li>
+                </ul>
+            </span>
+
+            <span class="ul-menu-wrapper" id="menu-wrapper-t">
+                <a class="button button-primary button-small" style="font-size: 9px;background: rgb(51,153,204);">
+                    增量日志
+                </a>
+                <ul class="ul-menu-t">
+                    <li><a href="#">r0</a></li>
+                    <li><a href="#">r1</a></li>
+                    <li><a href="#">r2</a></li>
+                    <li><a href="#">r3</a></li>
+                    <li><a href="#">r4</a></li>
+                    <li><a href="#">r5</a></li>
+                    <li><a href="#">r6</a></li>
+                    <li><a href="#">r7</a></li>
+                </ul>
+            </span>
+
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="display-log" id="div-display-log">
+
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+<!---->
+
+<!--END主内容区域-->
